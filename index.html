@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="img/pdf.png" />    
+<title>Visor</title>
+<style>
+
+                    body
+					{
+                        background-color: #333;
+                    }
+       
+
+                .embed-cover 
+				{
+					position: fixed;
+					height: 93%;
+					top:2.5%;
+					width: 81%;
+					margin: 0 auto;
+					z-index: 20000;
+				    opacity: .4;
+                    left: 4.9%;
+                  
+                }
+ 
+
+
+                #liga
+                {
+                position: fixed;
+                height:90%;
+                top:7.5%;
+                left: 11.5%;
+                width: 100%;
+                margin: 0 auto;    
+                zoom: 1% !important;
+                }
+                .imgv
+                {
+                    max-width: 75% !important;
+                }
+                /* ---------------------------------------------------
+                    MEDIAQUERIES LAPTOP
+                ----------------------------------------------------- */
+                @media (max-width: 1500px) 
+                {
+                                .embed-cover 
+                                {
+                                    position: fixed;
+                                    height: 93%;
+                                    top:2.5%;
+                                    right: 5.5%;
+                                    width: 90%;
+                                    margin: 0 auto;
+                                    z-index: 20000;
+                                    opacity: .4;
+                                }
+
+
+}
+
+</style>
+</head>
+
+<body>
+    
+        <div class="visor" >
+          <center>
+              <embed  id="liga" src="doc.pdf#toolbar=0"  type="application/pdf" class="imgv" > </embed>
+              <div class="embed-cover"></div>
+                      
+          </center>
+   
+  </div>   
+</body>
+
+<script>
+    // funcion para evitar copiar contenido
+    
+    document.oncontextmenu = function() 
+        {
+            return false
+        }
+        function right(e) 
+        {
+            var msg = "No disponible";
+            if (navigator.appName == 'Netscape' && e.which == 3) 
+            {
+             
+                return false;
+            }
+            else if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) 
+            {
+           
+                return false;
+            }
+            return true;
+        }
+        document.onmousedown = right;
+
+
+</script>
+</html>
